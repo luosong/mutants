@@ -1,0 +1,93 @@
+/* custom font icons */
+@import "font-icons/style.css";
+
+/* hightlight.js for syntax highlighting */
+@import "github.css";
+
+a {
+  color: #ff4081;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+html {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body {
+  font-size: 15px;
+  line-height: 24px;
+  position: relative;
+  min-height: 100%;
+}
+
+/* Used in our inline-styles.jsx as an example */
+.muidocs-checkbox-example {
+  border: 2px solid #FF9800;
+  background-color: #4CAF50;
+}
+
+ul, li {
+  padding: 0px;
+  margin: 0px;
+}
+
+header .small-header{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #0097A7;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  z-index: 10000;
+}
+
+header .small-header li {
+  display: inline-block;
+  padding: 0 10px;
+}
+header .small-header li:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+.body {
+  padding-bottom: 100px;
+  padding-top: 60px;
+}
+footer {
+  background-color: #EEEEEE;
+  height: 100px;
+  text-align: center;
+  line-height: 48px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  z-index: 1200;
+}
+footer a {
+  font-size: 18px;
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+}
+
+.markdown-body pre.lang-bash{
+  background-color: #272727;
+}
+
+.markdown-body pre>code.lang-bash{
+  color: #4fbf40;
+  font-size: 120%;
+}
