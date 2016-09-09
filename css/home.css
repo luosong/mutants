@@ -6,6 +6,9 @@
 .home-page li{
     list-style: none;
 }
+.home-page a{
+    color: #ffffff;
+}
 .home-page .header-section {
     background-color: #00ACC1;
     text-align: center;
