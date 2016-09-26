@@ -14,97 +14,104 @@
             height: 99%;
         }
     </style>
-    <script type="text/javascript" >
-        //监听mousedown, mousemove, mouseup事件, 并进行转换模拟touchstart, touchmove, touchend事件
-
-        var press = false;
-        document.addEventListener('mousedown', function(event) {
-
-            var touchStartEvent = document.createEvent('MouseEvent');
-            touchStartEvent.initEvent('touchstart', true, true, window, 1,
-                    event.screenX, event.screenY,
-                    event.clientX, event.clientY,
-                    event.ctrlKey, event.altKey, event.shiftKey, event.metaKey
-            );
-            touchStartEvent.touches = [{
-                pageX: event.pageX,
-                pageY: event.pageY,
-                clientX: event.clientX,
-                clientY: event.clientY,
-                screenX: event.screenX,
-                screenY: event.screenY,
-                target: event.target
-            }];
-
-            press = true;
-
-
-            event.target.dispatchEvent(touchStartEvent);
-        });
-
-        document.addEventListener('mousemove', function(event) {
-            if(!press){
-                return;
-            }
-
-            var touchStartEvent = document.createEvent('MouseEvent');
-            touchStartEvent.initEvent('touchmove', true, true, window, 1,
-                    event.screenX, event.screenY,
-                    event.clientX, event.clientY,
-                    event.ctrlKey, event.altKey, event.shiftKey, event.metaKey
-            );
-
-            touchStartEvent.touches = [{
-                pageX: event.pageX,
-                pageY: event.pageY,
-                clientX: event.clientX,
-                clientY: event.clientY,
-                screenX: event.screenX,
-                screenY: event.screenY,
-                target: event.target
-            }];
-
-
-            event.target.dispatchEvent(touchStartEvent);
-        });
-
-        document.addEventListener('mouseup', function(event) {
-
-            var touchStartEvent = document.createEvent('MouseEvent');
-            touchStartEvent.initEvent('touchend', true, true, window, 1,
-                    event.screenX, event.screenY,
-                    event.clientX, event.clientY,
-                    event.ctrlKey, event.altKey, event.shiftKey, event.metaKey
-            );
-
-            touchStartEvent.touches = [{
-                pageX: event.pageX,
-                pageY: event.pageY,
-                clientX: event.clientX,
-                clientY: event.clientY,
-                screenX: event.screenX,
-                screenY: event.screenY,
-                target: event.target
-            }];
-
-            press = false;
-
-            event.target.dispatchEvent(touchStartEvent);
-        });
-
-        window.onload = function () {
-            Object.defineProperty(mutants.env, 'os' , {
-                configurable: true,
-                get : () => {
-                    return mutants.env.constant.os.ios;
-                }
-            });
-        }
-
-    </script>
+    <!--<script src="./samples-assets/faker/faker.min.js" type="text/javascript"></script>-->
+    <script src="http://localhost:4001/src/libs/faker/faker.min.js" type="text/javascript"></script>
 </head>
 <body>
-<iframe src="../sample-assets/index.html" ></iframe>
+<div id="app"></div>
+<!--<script src="./samples-assets/main.js" ></script>-->
+<script src="http://localhost:4001/main.js"></script>
+
+<!-- 加载sample项目代码 -->
+
+<!-- 监听mousedown, mousemove, mouseup事件, 并进行转换模拟touchstart, touchmove, touchend事件 -->
+<script type="text/javascript" >
+
+    var press = false;
+    document.addEventListener('mousedown', function(event) {
+
+        var touchStartEvent = document.createEvent('MouseEvent');
+        touchStartEvent.initEvent('touchstart', true, true, window, 1,
+                event.screenX, event.screenY,
+                event.clientX, event.clientY,
+                event.ctrlKey, event.altKey, event.shiftKey, event.metaKey
+        );
+        touchStartEvent.touches = [{
+            pageX: event.pageX,
+            pageY: event.pageY,
+            clientX: event.clientX,
+            clientY: event.clientY,
+            screenX: event.screenX,
+            screenY: event.screenY,
+            target: event.target
+        }];
+
+        press = true;
+
+
+        event.target.dispatchEvent(touchStartEvent);
+    });
+
+    document.addEventListener('mousemove', function(event) {
+        if(!press){
+            return;
+        }
+
+        var touchStartEvent = document.createEvent('MouseEvent');
+        touchStartEvent.initEvent('touchmove', true, true, window, 1,
+                event.screenX, event.screenY,
+                event.clientX, event.clientY,
+                event.ctrlKey, event.altKey, event.shiftKey, event.metaKey
+        );
+
+        touchStartEvent.touches = [{
+            pageX: event.pageX,
+            pageY: event.pageY,
+            clientX: event.clientX,
+            clientY: event.clientY,
+            screenX: event.screenX,
+            screenY: event.screenY,
+            target: event.target
+        }];
+
+
+        event.target.dispatchEvent(touchStartEvent);
+    });
+
+    document.addEventListener('mouseup', function(event) {
+
+        var touchStartEvent = document.createEvent('MouseEvent');
+        touchStartEvent.initEvent('touchend', true, true, window, 1,
+                event.screenX, event.screenY,
+                event.clientX, event.clientY,
+                event.ctrlKey, event.altKey, event.shiftKey, event.metaKey
+        );
+
+        touchStartEvent.touches = [{
+            pageX: event.pageX,
+            pageY: event.pageY,
+            clientX: event.clientX,
+            clientY: event.clientY,
+            screenX: event.screenX,
+            screenY: event.screenY,
+            target: event.target
+        }];
+
+        press = false;
+
+        event.target.dispatchEvent(touchStartEvent);
+    });
+
+    window.onload = function () {
+        Object.defineProperty(mutants.env, 'os' , {
+            configurable: true,
+            get : () => {
+                return mutants.env.constant.os.ios;
+            }
+        });
+    }
+
+</script>
 </body>
 
 </html>

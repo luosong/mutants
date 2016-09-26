@@ -56,18 +56,19 @@
 }
 
 .home-page .header-section .left-section .func-btns .get-started-btn,
+.home-page .header-section .left-section .func-btns .app-develop-btn,
 .home-page .header-section .left-section .func-btns .small-btn{
     font-size: 14px;
-    width: 180px;
     height: 36px;
     border: 1px solid #e8e8e8;
     border-radius: 2px;
     color: #ffffff;
     font-weight: 500;
 }
-.home-page .header-section .left-section .func-btns .get-started-btn{
+.home-page .header-section .left-section .func-btns .get-started-btn,
+.home-page .header-section .left-section .func-btns .app-develop-btn{
     font-size: 16px;
-
+    width: 152px;
 }
 .home-page .header-section .left-section .func-btns .small-btn{
     width: 100px;
@@ -92,6 +93,7 @@
 .home-page .header-section .right-section .demo-phone-container {
     background-color: #ffffff;
     height: 100%;
+    border: none;
 }
 .home-page .content-container{
     padding: 40px;
